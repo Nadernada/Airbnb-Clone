@@ -12,8 +12,8 @@ import Container from '../components/Container'
 import ListingCard from '../components/listings/ListingCard'
 
 interface ReservationsClientProps {
-  reservations: Reservations[]
-  currentUser: User | null
+  reservations: Reservations[],
+  currentUser?: User | null,
 }
 
 const ReservationsClient: React.FC<ReservationsClientProps> = ({
@@ -58,7 +58,7 @@ const ReservationsClient: React.FC<ReservationsClientProps> = ({
             gap-8
           '
       >
-        {reservations.map((reservation) => (
+        {reservations.map((reservation: any) => (
           <ListingCard
             key={reservation.id}
             data={reservation.listing}
